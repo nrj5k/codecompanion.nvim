@@ -109,6 +109,7 @@ agents. Out of the box, the plugin supports:
 - Augment Code (`auggie_cli`) - Requires an API key
 - Cagent (`cagent`)
 - Claude Code (`claude_code`) - Requires an API key or a Claude Pro subscription
+- Stakpak (stakpak)
 - Codex (`codex`) - Requires an API key
 - Copilot (`copilot`) - Requires a token which is created via `:Copilot setup` in Copilot.vim <https://github.com/github/copilot.vim>
 - Gemini CLI (`gemini_cli`) - Requires an API key or a Gemini Pro subscription

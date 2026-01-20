@@ -169,11 +169,12 @@ To use [Claude Code](https://www.anthropic.com/claude-code) within CodeCompanion
 
 ### Using Claude Pro Subscription
 
-3. In your CLI, run `claude setup-token`. You'll be redirected to the Claude.ai website for authorization:
-<img src="https://github.com/user-attachments/assets/28b70ba1-6fd2-4431-9905-c60c83286e4c">
-4. Back in your CLI, copy the OAuth token (in yellow):
-<img src="https://github.com/user-attachments/assets/73992480-20a6-4858-a9fe-93a4e49004ff">
-5. In your CodeCompanion config, extend the `claude_code` adapter and include the OAuth token (see the section on [environment variables and setting API keys](/configuration/adapters-http#environment-variables-setting-an-api-key) for other ways to do this):
+1. In your CLI, run `claude setup-token`. You'll be redirected to the Claude.ai website for authorization:
+   <img src="https://github.com/user-attachments/assets/28b70ba1-6fd2-4431-9905-c60c83286e4c">
+2. Back in your CLI, copy the OAuth token (in yellow):
+   <img src="https://github.com/user-attachments/assets/73992480-20a6-4858-a9fe-93a4e49004ff">
+3. In your CodeCompanion config, extend the `claude_code` adapter and include the OAuth token (see the section on [environment variables and setting API keys](/configuration/adapters-http#environment-variables-setting-an-api-key) for other ways to do this):
+
 ```lua
 require("codecompanion").setup({
   adapters = {
@@ -192,8 +193,9 @@ require("codecompanion").setup({
 
 ### Using an API Key
 
-3. [Create](https://console.anthropic.com/settings/keys) an API key in your Anthropic console.
-4. In your CodeCompanion config, extend the `claude_code` adapter and set the `ANTHROPIC_API_KEY`:
+1. [Create](https://console.anthropic.com/settings/keys) an API key in your Anthropic console.
+2. In your CodeCompanion config, extend the `claude_code` adapter and set the `ANTHROPIC_API_KEY`:
+
 ```lua
 require("codecompanion").setup({
   adapters = {
@@ -239,9 +241,9 @@ require("codecompanion").setup({
 
 1. Install [Gemini CLI](https://github.com/google-gemini/gemini-cli)
 2. Update your CodeCompanion config and select which authentication methods you'd like to use. Currently there are:
-    - `oauth-personal` which uses your Google login
-    - `gemini-api-key`
-    - `vertex-ai`)
+   - `oauth-personal` which uses your Google login
+   - `gemini-api-key`
+   - `vertex-ai`)
 
 The example below uses the `gemini-api-key` method, pulling the API key from [1Password CLI](https://developer.1password.com/docs/cli/get-started/):
 
@@ -280,7 +282,21 @@ You can specify a custom model in your `~/.config/opencode/config.json` file:
 
 ```json
 {
-    "$schema": "https://opencode.ai/config.json",
-    "model": "github-copilot/claude-sonnet-4.5",
+  "$schema": "https://opencode.ai/config.json",
+  "model": "github-copilot/claude-sonnet-4.5"
 }
+```
+
+## Setup: Stakpak
+
+Stakpak is an AI DevOps Agent that analyzes your infrastructure and provides contextually relevant recommendations.
+
+```lua
+require("codecompanion").setup({
+  adapters = {
+    acp = {
+      stakpak = "stakpak",
+    },
+  },
+})
 ```
